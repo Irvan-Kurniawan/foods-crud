@@ -8,15 +8,16 @@ echo '<script> alert("You have not logon yet"); </script>';
 require __DIR__.'\connection.php';
 $name = $_GET['name'];
 $description = $_GET['description'];
+$id = $_GET['id'];
 
-
-$sql = "INSERT INTO m_foods(name, description) VALUES('$name','$description')"; 
-
+$sql = "UPDATE m_foods SET name='$name',description='$description' WHERE id=$id";
+// var_dump($_POST);
+// echo ($sql);
 echo "Loading...";
 // echo "$sql";
 if ($connection->query($sql)) {
     echo '<script> document.cookie = "login=true"; window.location.href="/foods"; </script>';
 } else {
-    echo "Error Adding food";
+    echo "Error Updating food";
 }
 ?>

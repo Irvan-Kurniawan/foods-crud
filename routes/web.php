@@ -28,6 +28,9 @@ Route::get('/foods', ['as'=>'foods',function() {
 Route::get('/delete', ['as'=>'delete',function() {
    return view('delete');
 }]);
+Route::get('/update', ['as'=>'update',function() {
+   return view('update');
+}]);
 Route::get('/logout', ['as'=>'logout',function() {
    return view('logout');
 }]);
@@ -36,6 +39,9 @@ Route::get('/addfood', ['as'=>'addfood',function() {
 }]);
 Route::get('/addingfood', ['as'=>'addingfood',function() {
    return view('addingfood');
+}]);
+Route::get('/updatingfood', ['as'=>'updatingfood',function() {
+   return view('updatingfood');
 }]);
 // Route::get('foods',function() {
 //    return redirect()->route('testing');
