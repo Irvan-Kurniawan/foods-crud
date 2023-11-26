@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/foods', ['as'=>'food-all',function() {
+//    return view('foods');
+// }]);
+// Route::get('foods',function() {
+//    return redirect()->route('food-all');
+// });
+Route::get('/foods', ['as'=>'foods',function() {
+   return view('foods');
+}]);
+
+// Route::get('foods',function() {
+//    return redirect()->route('testing');
+// });

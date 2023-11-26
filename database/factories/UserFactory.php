@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace Database\Factories;
 
@@ -37,3 +37,4 @@ class UserFactory extends Factory
         });
     }
 }
+ -->
