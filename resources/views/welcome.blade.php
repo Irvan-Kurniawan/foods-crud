@@ -2,7 +2,7 @@
     require __DIR__.'\connection.php';
 
 if (isset($_COOKIE['login'])){
-    echo '<script> window.open("'.__DIR__.'\index.php", "_self") </script>';
+    echo '<script> window.location.replace("foods", "_self") </script>';
 }
 
 if(isset($_POST['login'])){
@@ -15,7 +15,6 @@ if(isset($_POST['login'])){
         if(password_verify($password,$row['password'])){
 
             echo '<script>
-                console.log("us");
                 document.cookie = "login=true";
                 document.cookie = "username='.$row['username'].'";
             window.location.replace("foods", "_self")  </script>';
@@ -55,9 +54,9 @@ $error=true;
     <form action="" method="POST">
         @csrf  
         @method('GET')
-    <table cellpadding=10 style="border-collapse:collapse">
+    <table cellpadding=10 style="border-collapse:collapse;" class="w-100 m-2">
         <tr>
-            <th colspan="3">LOGIN Page</td>
+            <th colspan="3" style="text-align: center">LOGIN PAGE</td>
         </tr>
         <tr>
             <td>Username</td>
@@ -70,7 +69,8 @@ $error=true;
             <td><input type="password" name="password"></td>
         </tr>
         <tr>
-            <td colspan=3 style="text-align:center;"><button type="submit" name="login">Login</button></td>
+            <td colspan=3 style="text-align:center;">
+                <button class="btn btn-primary" type="submit" name="login">Login</button></td>
         </tr>
     </form>
     </table>
