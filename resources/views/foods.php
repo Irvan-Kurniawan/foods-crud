@@ -35,17 +35,15 @@ echo '<script> alert("You have not logon yet"); </script>';
 				    if(mysqli_num_rows($result)>0){
 				    	$i=1;
 				    	while($row = $result->fetch_assoc()) {
-						    echo '<td>'. $i++ .'</td>
+						    echo '<tr><td>'. $i++ .'</td>
 						    <td>'. $row["name"] .'</td>
 						    <td> '. $row["description"] .' </td>
 						    <td class="container d-flex justify-content-around text-center">
-					          <button
-					            class="bi btn btn-primary"
-					            onClick="deleteRow()"
-					          >Update</button>
+	
+					          <a class="bi btn btn-primary" href="update?id='.$row['id'].'">Update</a>
 					          <a class="bi btn btn-danger" href="delete?id='.$row['id'].'">Delete</a>
 					          
-					        </td>';
+					        </td></tr>';
 						  }
 
 				    }
